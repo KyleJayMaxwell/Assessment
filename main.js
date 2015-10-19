@@ -245,21 +245,118 @@ for(i=0;i<bedroom.length;i++){
 
 var number = 25;
 while(number < 85){
-  number += 15;
-  
+  var active = number += 15;
+  console.log(active);
 }
-// 29. Write a while loop that logs "This loop is number: ___" to the console 5 times. Use your counter to fill in the blank.
+
+
+// 29. Write a while loop that logs "This loop is number: ___" to the console 5 times. 
+//Use your counter to fill in the blank.
+var counter = 1;
+while(counter < 6){
+    console.log("This loop is number: " + counter);
+    counter++;
+}
+
+
 // 30. Use a for loop to rewrite #29.
-// 31. Prompt a user to pick either a number or a word. Create a script that alerts the user whether they chose a number or a word.
-// 32. Use Math.floor and Math.random to roll two six sided dice for two players. Determine which player wins with the higher roll.
+
+for(i=1;i<6;i++){
+  console.log("This loop is number: " + i);
+}
+
+
+// *****************
+// 31. Prompt a user to pick either a number or a word. 
+//Create a script that alerts the user whether they chose a number or a word.
+
+var askshit = prompt("Pick a number or a word");
+var team1 = [];
+var team2 = [];
+
+if(askshit = /^[a-zA-Z]+$/){
+  team1.push(askshit);
+} else {
+  team2.push(askshit);
+}
+console.log(team1);
+console.log(team2);
+
+
+// 32. Use Math.floor and Math.random to roll two six sided dice for two players. 
+//Determine which player wins with the higher roll.
+
+var di1 = Math.floor((Math.random() * 6) + 1);
+var di2 = Math.floor((Math.random() * 6) + 1);
+var dice1 = Math.floor((Math.random() * 6) + 1);
+var dice2 = Math.floor((Math.random() * 6) + 1);
+
+console.log("Player one Dice #1: " + di1);
+console.log("Player one Dice #2: " + di2);
+console.log("Player two Dice #1: " + dice1);
+console.log("Player two Dice #2: " + dice2);
+
+var player1 = di1 + di2;
+var player2 = dice1 + dice2;
+
+console.log("Player 1's Score: " + player1);
+console.log("Player 2's Score: " + player2);
+
+if(player1 > player2){
+  console.log("Player 1 has the higher roll");
+} else if(player1 < player2){
+  console.log("Play 2 has the higher roll");
+} else{
+  console.log("Tie Game");
+}
+
+// *********************
 // 33. Define a function called "divideByThree". It should accept one parameter called "number".
 //     The function should divide the number by three and output the answer.
 //     If the number is not divisible by three with a remainder of zero, alert the user that their number is invalid.
+
+var br = 9;
+var br2 = 4; 
+
+var divideByThree = function(number){
+  if(number%3){
+    console.log(number/3);
+  } else{
+    alert("Number is invalid");
+  }
+}
+
+divideByThree(br);
+divideByThree(br2);
+
+
 // 34. Write a function that accepts the following array and separates the people into men and women.
 //     HINT: The men are even and the women are odd.
-       battingLineUp= ["Henry", "Shirley", "Mark", "Tina", "Max", "Sara", "Eric", "Lisa", "Ralph", "Connie", "Drew"]
+var battingLineUp = ["Henry", "Shirley", "Mark", "Tina", "Max", "Sara", "Eric", "Lisa", "Ralph", "Connie", "Drew"]
+
+var splitTeam = function(people){
+  var team1 = [];
+  var team2 = [];
+  for(i=0; i < people.length; i++){
+    if (i%2 === 0) {
+      team1.push(people[i]);
+    } else {
+      team2.push(people[i]);
+    }
+  }
+  console.log("Men: " + team1);
+  console.log("Women: " + team2);
+}
+
+splitTeam(battingLineUp);
+
+
 // 35. Prompt a user to enter their phone number. Write a function that outputs their phone number in a pretty format like:
 //     (555) 883-3985
+
+var inputnumber = prompt("Enter your 10 digit number.");
+
+
 //     Alert the user if they have entered anything except a 10 digit number.
 // 36. Write a helpufl tipping function that accepts two parameters, the bill amount and service score based on a scale of 1-10.
 //     The output should be the bill, the tip, and the total amount.
@@ -268,6 +365,15 @@ while(number < 85){
 //     Iterate over the elements in the following array to determine if each is a number.
        arrayOfSchtuff = ["four", 55, {myDog: "Scranton"}, "fifty-one", 21, 398577729, "3,333"]
 // 38. Use a function to ask a user for a US Dollar amount and converts it to Canadian Dollars.
+
+var dollar = prompt("How much US dollars?");
+
+var conversionrate = function(money){
+  var canadacash = money * 1.30;
+  console.log("You have " + canadacash + " in Canadian dollars.");
+}
+
+conversionrate(dollar);
 // 39. Add the option of converting to Euros. First ask the user which currency they want the conversion for, then ask for the dollar amount.
 // 40. Write a function that returns an object of duplicate letters in an string.
 //     "Baby Aaron" should return {"b":2, "a":3}
